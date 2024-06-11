@@ -140,8 +140,8 @@ a {
 
 .sidebar-scroll::-webkit-scrollbar{
     background: transparent;
-    width: 15px;
-    overflow-y:overlay
+    width: 20px;
+    overflow-y:overlay;
 }
 
 .sidebar-scroll::-webkit-scrollbar-thumb{
