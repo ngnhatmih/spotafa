@@ -140,7 +140,7 @@ a {
 
 .sidebar-scroll::-webkit-scrollbar{
     background: transparent;
-    width: 20px;
+    width: 15px;
     overflow-y:overlay;
 }
 
