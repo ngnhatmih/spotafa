@@ -21,7 +21,9 @@ body {
     background-color: #000000;
     overflow-y: hidden;
     display: grid;
-    grid-template-rows: 20fr 1fr;
+    grid-template-rows: auto 60px;
+    gap: 8px;
+    padding: 8px;
 }
 
 a {
@@ -30,13 +32,13 @@ a {
 
 .main {
     display: grid;
-    grid-template-columns: auto 3fr;
-    height: 96%;
+    grid-template-columns: 395px auto;
+    height: 100%;
+    gap: 8px;
     overflow: hidden;
 }
 
 .left {
-    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -83,7 +85,7 @@ a {
 
 .left > .nav, .left > .library {
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 /* Library */
@@ -128,8 +130,8 @@ a {
 }
 
 .library-main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 235px;
     height: 100%;
     overflow: hidden;
 }
@@ -141,14 +143,12 @@ a {
     flex-direction: column;
     gap: 20px;
     flex: 0.5;
-    overflow-y: overlay;
-    height: calc(100%-250px);
-    
+    overflow-y: overlay;  
 }
 
 .sidebar-scroll::-webkit-scrollbar{
     background: transparent;
-    width: 15px;
+    width: 5px;
     overflow-y:overlay;
 }
 
@@ -195,15 +195,12 @@ a {
 
 .library-footer {
     overflow: hidden;
-    flex: 1;
-    flex-grow: 1;
-    margin-top: auto;
-    height: 200px;
 }
 
 .library-footer ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .library-footer ul a {
@@ -226,10 +223,28 @@ a {
     font-size: 12px;
 }
 
-.library-footer .privacy .cookies {
-    
-}
-
 .library-footer .privacy .cookies:hover {
     text-decoration: underline;
+}
+
+.library-footer .lang {
+    padding: 0 16px;
+}
+
+.library-footer .lang button {
+    border: 1px solid #A7A7A7;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: #A7A7A7;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.library-footer .lang button i {
+    margin-right: 5px;
+}
+
+body >.signup {
+    background: linear-gradient(90deg, #AE2996, #5299F3);
 }
