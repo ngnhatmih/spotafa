@@ -20,6 +20,8 @@ html, body {
 body {
     background-color: #000000;
     overflow-y: hidden;
+    display: grid;
+    grid-template-rows: 20fr 1fr;
 }
 
 a {
@@ -27,21 +29,23 @@ a {
 }
 
 .main {
-    display: flex;
-    height: 94%;
+    display: grid;
+    grid-template-columns: auto 3fr;
+    height: 96%;
+    overflow: hidden;
 }
 
 .left {
-    width: 27.07%;
     padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     height: 100%;
+    overflow: hidden;
 }
 
 .right {
-    width: 72.93%;
+    
 }
 
 /* Navbar */
@@ -85,6 +89,7 @@ a {
 /* Library */
 .library {
     height: 100%;
+    overflow: hidden;
 }
 
 .nav, .library {
@@ -126,6 +131,7 @@ a {
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow: hidden;
 }
 
 /* Sidebar-scroll */
@@ -134,8 +140,10 @@ a {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: calc(100% - 250px);
+    flex: 0.5;
     overflow-y: overlay;
+    height: calc(100%-250px);
+    
 }
 
 .sidebar-scroll::-webkit-scrollbar{
@@ -186,5 +194,42 @@ a {
 /* Library Footer */
 
 .library-footer {
+    overflow: hidden;
+    flex: 1;
+    flex-grow: 1;
+    margin-top: auto;
+    height: 200px;
+}
+
+.library-footer ul {
+    list-style: none;
+    display: flex;
+}
+
+.library-footer ul a {
+    color: #A7A7A7;
+    font-size: 11px;
+}
+
+.library-footer ul li {
+    margin-right: 16px;
+    margin-bottom: 8px;
+}
+
+.library-footer .privacy {
+    margin: 32px 0;
+    padding: 0 16px;
+}
+
+.library-footer .privacy span {
+    color: #A7A7A7;
+    font-size: 12px;
+}
+
+.library-footer .privacy .cookies {
     
+}
+
+.library-footer .privacy .cookies:hover {
+    text-decoration: underline;
 }
