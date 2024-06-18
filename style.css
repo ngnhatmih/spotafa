@@ -277,16 +277,20 @@ body >.signup {
     background: linear-gradient(90deg, #AE2996, #5299F3);
 }
 
+/* Right */
+
 .right{
-    border-radius: 10px;
+    border-radius: 6px;
     background: linear-gradient(rgb(33, 32, 32), #0d0c0c);
     overflow-y: auto !important;
     overflow-x: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .right::-webkit-scrollbar{
     background: transparent;
-    width: 5px;
+    width: 1px;
     overflow-y:overlay;
 }
 
@@ -304,16 +308,16 @@ body >.signup {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 6px 6px 0 0;
     background: #121212;
     height: 64px;
     overflow: hidden;
     align-items: center;
     z-index: 1;
-    position: fixed;
-    right: 0;
-    left: 410px;
+    position: sticky;
+    top: 0;
     contain: content;
+    width: inherit;
 }
 
 .right .top .prev-but button{
@@ -326,17 +330,19 @@ body >.signup {
     width: 32px;
     height: 32px;
     position: relative;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: #0a0a0a;
 }
 
 .right .top button i{
-    padding-left: 10px;
+    width: 100%;
+    display: inline-block;
 }
 
 .top .prev-but button i{
     color: #838181;
-    font-size: 22px;
-    margin-right: 20px;
+    font-size: 17px;
+    display: grid;
+    place-items: center;
 }
 
 .top .login-but{
@@ -357,20 +363,20 @@ body >.signup {
     font-size: 20px;
     color: #242323;
     border-radius: 20px;
+    border: 2px solid #fff;
 }
 
 .login-but .sign-up:hover{
     color: #fff;
+    transform: scale(1.05);
 }
 
 .login-but .Login:hover {
-    border: 2px solid #fff;
-    border-radius: 30px;
+    transform: scale(1.05);
 }
 
 .list{
-    padding: 0px 16.8679px;
-    margin-top: 60px;
+    padding: 0px 17.2642px;
 }
 
 .Main .list .list-in{
@@ -410,14 +416,30 @@ body >.signup {
     color: #838181;
 }
 
-.play-list{
-    display: flex;
+.play-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    place-items: center;
 }
-.Rows{
-    width: 182px;
+
+
+.Rows {
+    width: 100%;
     gap: 20px;
     min-width: 182px;
     
+}
+
+@media (max-width: 2265px){
+    .rows9 .item {
+        display: none;
+    }
+}
+
+@media (max-width: 2060px){
+    .rows8 .item {
+        display: none;
+    }
 }
 
 .Rows .item{
@@ -427,6 +449,7 @@ body >.signup {
     margin-top: 8px;
     border-radius: 6px;
     padding: 10px;
+    position: relative;
 }
 
 .Rows .item img{
@@ -435,6 +458,13 @@ body >.signup {
 
 .item1 img{
     border-radius: 50%;
+    filter: drop-shadow(-1px 2px 24px #000000);
+}
+
+.item .card {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 10px;
 }
 
 .item .card h4{
@@ -445,21 +475,32 @@ body >.signup {
 }
 
 .item:hover{
-    border: 1px solid #272626;
-    background: #272626;
+    border: 1px solid #1A1A1A;
+    background: #1A1A1A;
 }
 
 .Rows .card i{
-    position: relative;
+    position: absolute;
+    padding-left: 1.5px;
     background: #1db954;
-    border-radius: 50%;
-    padding: 10px;
     align-items: center;
     justify-content: center;
-    top: -45px;
-    left: 124px;
+    bottom: 25%;
+    right: 10%;
     opacity: 0;
     transform: 1s ease all;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transform: scale(1.3);
+}
+
+.Rows .card i:hover {
+    background: #1ed760;
+    transform: scale(1.35);
+    transition: 0.1s;
 }
 
 .Rows .item:hover .card i{
@@ -502,4 +543,8 @@ body >.signup {
     font-size: 14px;
     font-weight: 600;
     color: #000;
+}
+
+body > div.main > div.right > div.Main > div:nth-child(1) > div.list-in > div > h2 {
+    cursor: pointer;
 }
